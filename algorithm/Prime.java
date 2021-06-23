@@ -5,6 +5,11 @@ public class Prime {
 
   public static void main(String[] args) {
     printPrimes(9);
+
+    System.out.println();
+
+    int[] arr = {1,2,3,4,5};
+    findPrimes(arr);
   }
 
   public static void printPrimes(Integer totalPrime) {
@@ -23,6 +28,21 @@ public class Prime {
         n++;
       }
       i++;
+    }
+  }
+
+  public static void findPrimes(int[] arr) {
+    for (int value : arr) {
+      int j = 1, count = 0;
+      while (j <= value) {
+        if (value % j == 0) {
+          count++;
+        }
+        j++;
+      }
+      if (count == 2) {
+        System.out.printf("%d ", value);
+      }
     }
   }
 
